@@ -37,7 +37,7 @@ function App() {
     if (userCode === "") {
       return;
     }
-    await axios.post("http://localhost:3001/compile", {
+    const response = await axios.post(import.meta.env.VITE_BACKEND_URL, {
       code: userCode,
       lang: userLang,
       input: userInput,
